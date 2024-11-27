@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<appSettings>
+  <setting>
+    <name>oraconstring</name>
+    <value>Data Source = ATLANTIS; User ID = ATLANTISERP; Password = ATLANTIS000;</value>
+    <type>cs</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>importtable</name>
+    <value>EXALCOSTORES</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>BRANCHID</name>
+    <value>8</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>ATLANTISUSER</name>
+    <value>ALPISUSER</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>ATLANTISPASS</name>
+    <value>bidata1</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>SERVICEURL</name>
+    <value>http://10.1.10.43/scripts/RWS.exe/soap/IAtlantis</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+</appSettings>

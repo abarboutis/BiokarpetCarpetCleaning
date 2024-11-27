@@ -1,0 +1,1 @@
+COPY ALBIO.txt+ALBIO.PCX LPT1 /b

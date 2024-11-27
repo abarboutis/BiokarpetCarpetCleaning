@@ -1,0 +1,20 @@
+Create-A-Label Tools: Label Variable Definitions File
+
+File Name                     D:\@Ody\Projects\EXALCOI\PB\src\barcodefiles\EXALCOIbinlabel.lbl
+Printer:                      Zebra  TLP2844 on LPT1:
+
+Field Name:                   "TBARCODEBIN"
+Data Source:                  When printed
+Prompt:                       "PBINBARCODE"
+String Length:                10
+Required:                     No
+Must Fill:                    No
+Field Type:                   Bar code (Code 128 (Auto-Switching))
+
+Field Name:                   "TBIN"
+Data Source:                  When printed
+Prompt:                       "PBIN"
+String Length:                10
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text

@@ -1,0 +1,1 @@
+copy SETIMAGE.txt+EXHOR.PCX LPT1 /b

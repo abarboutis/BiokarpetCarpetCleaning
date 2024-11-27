@@ -1,0 +1,3 @@
+insert into tsuppliers(supplierid,compid,Suppliercode,suppliertitle,occupation,Address,zip,City,Country,Phone1,phone2,vat1,erpid,erpcode,erpsupplierid)
+select customerid,compid,customercode,customertitle,occupation,Address,zip,City,Country,Phone1,phone2,vat1,erpid,erpcode,erpid
+ from tcustomers where customercode ='113747' or customercode ='113748' 

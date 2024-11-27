@@ -1,0 +1,6 @@
+# Ignore all .pbf files
+*.pbd
+*.pdb
+
+# Ignore all .rar files
+*.rar

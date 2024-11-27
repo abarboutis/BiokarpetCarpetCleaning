@@ -1,0 +1,2073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckDBConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckDBConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckDBConnectionResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BinitemsQty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="criteria" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sortcriteria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BinitemsQtyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BinitemsQtyResult" type="tns:ArrayOfTWmsBinItemsQty" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTWmsBinItemsQty">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TWmsBinItemsQty" nillable="true" type="tns:TWmsBinItemsQty" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TWmsBinItemsQty">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="binstoretransid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="binitemsqtyid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="branchid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="whbinid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="whbinidto" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmstransid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="whbintype" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="whbincode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemlotid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="oldqty" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemqtyprimary" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitprimary" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeleteRecord" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="munitprimarydesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitsrelation" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="length" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitsecondary" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="munitsecondarydesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemqtysecondary" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="packitemqty" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderdtlid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="routeid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbreccreatedate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dbreccreateuser" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="updateonly" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbrecmoddate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dbrecmoduser" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="transtype" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="transex" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="createbintransrecord" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="customertitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ordercode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemdesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="checkavailability" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="BinitemsQtyUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="binitemqtyrecord" type="tns:TWmsBinItemsQty" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BinitemsQtyUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BinitemsQtyUpdateResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBinTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mbintrans" type="tns:TWmsBinItemsQty" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertBinTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertBinTransResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BinIDByCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="branchid" type="s:short" />
+            <s:element minOccurs="0" maxOccurs="1" name="bincode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BinIDByCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BinIDByCodeResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderDetailStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderdtlid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderDetailStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOrderDetailStatusResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderDetailItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderdtlid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="newitemid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrderDetailItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateOrderDetailItemResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReceive">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderdtlid" type="s:long" />
+            <s:element minOccurs="1" maxOccurs="1" name="transtype" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteReceiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteReceiveResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBinInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="binid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBinInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBinInfoResult" type="tns:TWmsBins" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TWmsBins">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="whbinid" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="branchid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="whzoneid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="whbincode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="whbintype" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="friendlycode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBinInfoByCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bincode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBinInfoByCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBinInfoByCodeResult" type="tns:TWmsBins" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BinList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="branchid" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="bintype" type="s:short" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BinListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BinListResult" type="tns:ArrayOfTWmsBins" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTWmsBins">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TWmsBins" nillable="true" type="tns:TWmsBins" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewWmsTransTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newtrans" type="tns:TwmsTrans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TwmsTrans">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="branchid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmstransid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="userid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmstranstypeid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="wmstransdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="NewWmsTransTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="NewWmsTransTaskResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="testNewWmsTransTask">
+        <s:complexType />
+      </s:element>
+      <s:element name="testNewWmsTransTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="testNewWmsTransTaskResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="branchid" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:short" />
+            <s:element minOccurs="1" maxOccurs="1" name="wmstranstypeid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransListResult" type="tns:ArrayOfTwmsTrans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTwmsTrans">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TwmsTrans" nillable="true" type="tns:TwmsTrans" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MoveInternal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="binitemqty" type="tns:TWmsBinItemsQty" />
+            <s:element minOccurs="0" maxOccurs="1" name="thistrans" type="tns:TWmsBinStoretrans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TWmsBinStoretrans">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="binstoretransid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="whbinid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmstranstype" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemqtyprimary" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="oldqty" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmstransid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitprimary" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderdtlid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="DeleteRecord" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="transex" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="terminal" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemqtysecondary" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="length" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="customertitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemdesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitsecondary" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="wmstransdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="whbincode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="whbinidfrom" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="whbinidto" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="branchid" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbreccreatedate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dbreccreateuser" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbrecmoddate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dbrecmoduser" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MoveInternalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MoveInternalResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransTypeInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="transtypeid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransTypeInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransTypeInfoResult" type="tns:TWmsTransTypes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TWmsTransTypes">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="wmstranstypeid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="wmstranstypedesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="wmstranstypeen" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="transex" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmsbindefault" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmsinternaltrans" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmsbinfrom" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="wmsbinto" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="showbinqtys" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="showallbins" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTransTypeInfoFromWmsTrans">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wmstransid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransTypeInfoFromWmsTransResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransTypeInfoFromWmsTransResult" type="tns:TWmsTransTypes" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStoreTransList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wmstransid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStoreTransListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStoreTransListResult" type="tns:ArrayOfTWmsBinStoretrans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTWmsBinStoretrans">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TWmsBinStoretrans" nillable="true" type="tns:TWmsBinStoretrans" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStoreTransRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="storetransid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStoreTransRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStoreTransRecordResult" type="tns:TWmsBinStoretrans" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBinItemQtyRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderdtlid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBinItemQtyRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBinItemQtyRecordResult" type="tns:TWmsBinItemsQty" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="orderdtlid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderDetailResult" type="tns:TOrderDetails" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TOrderDetails">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="orderdtlid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="branchid" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemqtyprimary" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitprimary" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="itemqtysecondary" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="width" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="length" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitsecondary" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="orderdtlstatus" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="orderdtlcomments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dbreccreatedate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dbreccreateuser" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemdesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitdecimals" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="customerid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="customertitle" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="munitprimarydesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="munitsecondarydesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteWmsTranList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wmstranid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteWmsTranListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteWmsTranListResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransListCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="wmstranid" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransListCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTransListCountResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemByCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemByCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemByCodeResult" type="tns:TItems" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TItems">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="itemid" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="compid" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="productid" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="itemdesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitprimary" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="munitsecondary" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Sqlerrorlog">
+        <s:complexType />
+      </s:element>
+      <s:element name="SqlerrorlogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SqlerrorlogResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="long" type="s:long" />
+      <s:element name="ArrayOfTWmsBinItemsQty" nillable="true" type="tns:ArrayOfTWmsBinItemsQty" />
+      <s:element name="TWmsBins" nillable="true" type="tns:TWmsBins" />
+      <s:element name="ArrayOfTWmsBins" nillable="true" type="tns:ArrayOfTWmsBins" />
+      <s:element name="ArrayOfTwmsTrans" nillable="true" type="tns:ArrayOfTwmsTrans" />
+      <s:element name="TWmsTransTypes" nillable="true" type="tns:TWmsTransTypes" />
+      <s:element name="ArrayOfTWmsBinStoretrans" nillable="true" type="tns:ArrayOfTWmsBinStoretrans" />
+      <s:element name="TWmsBinStoretrans" nillable="true" type="tns:TWmsBinStoretrans" />
+      <s:element name="TWmsBinItemsQty" nillable="true" type="tns:TWmsBinItemsQty" />
+      <s:element name="TOrderDetails" nillable="true" type="tns:TOrderDetails" />
+      <s:element name="TItems" nillable="true" type="tns:TItems" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckDBConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckDBConnection" />
+  </wsdl:message>
+  <wsdl:message name="CheckDBConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckDBConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="BinitemsQtySoapIn">
+    <wsdl:part name="parameters" element="tns:BinitemsQty" />
+  </wsdl:message>
+  <wsdl:message name="BinitemsQtySoapOut">
+    <wsdl:part name="parameters" element="tns:BinitemsQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="BinitemsQtyUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:BinitemsQtyUpdate" />
+  </wsdl:message>
+  <wsdl:message name="BinitemsQtyUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:BinitemsQtyUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertBinTransSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertBinTrans" />
+  </wsdl:message>
+  <wsdl:message name="InsertBinTransSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertBinTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="BinIDByCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:BinIDByCode" />
+  </wsdl:message>
+  <wsdl:message name="BinIDByCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:BinIDByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrderDetailStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderDetailStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailItemSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrderDetailItem" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailItemSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrderDetailItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReceiveSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteReceive" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReceiveSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteReceiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBinInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBinInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoByCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBinInfoByCode" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoByCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBinInfoByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="BinListSoapIn">
+    <wsdl:part name="parameters" element="tns:BinList" />
+  </wsdl:message>
+  <wsdl:message name="BinListSoapOut">
+    <wsdl:part name="parameters" element="tns:BinListResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewWmsTransTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:NewWmsTransTask" />
+  </wsdl:message>
+  <wsdl:message name="NewWmsTransTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:NewWmsTransTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="testNewWmsTransTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:testNewWmsTransTask" />
+  </wsdl:message>
+  <wsdl:message name="testNewWmsTransTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:testNewWmsTransTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransList" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransListResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveInternalSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveInternal" />
+  </wsdl:message>
+  <wsdl:message name="MoveInternalSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveInternalResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransTypeInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:TransTypeInfo" />
+  </wsdl:message>
+  <wsdl:message name="TransTypeInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:TransTypeInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransTypeInfoFromWmsTransSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransTypeInfoFromWmsTrans" />
+  </wsdl:message>
+  <wsdl:message name="GetTransTypeInfoFromWmsTransSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransTypeInfoFromWmsTransResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStoreTransList" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStoreTransListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStoreTransRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStoreTransRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBinItemQtyRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBinItemQtyRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetBinItemQtyRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBinItemQtyRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWmsTranListSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteWmsTranList" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWmsTranListSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteWmsTranListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransListCount" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransListCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemByCode" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SqlerrorlogSoapIn">
+    <wsdl:part name="parameters" element="tns:Sqlerrorlog" />
+  </wsdl:message>
+  <wsdl:message name="SqlerrorlogSoapOut">
+    <wsdl:part name="parameters" element="tns:SqlerrorlogResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckDBConnectionHttpGetIn" />
+  <wsdl:message name="CheckDBConnectionHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="BinitemsQtyHttpGetIn">
+    <wsdl:part name="criteria" type="s:string" />
+    <wsdl:part name="sortcriteria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BinitemsQtyHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTWmsBinItemsQty" />
+  </wsdl:message>
+  <wsdl:message name="BinIDByCodeHttpGetIn">
+    <wsdl:part name="branchid" type="s:string" />
+    <wsdl:part name="bincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BinIDByCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailStatusHttpGetIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailItemHttpGetIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+    <wsdl:part name="newitemid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailItemHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReceiveHttpGetIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+    <wsdl:part name="transtype" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReceiveHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoHttpGetIn">
+    <wsdl:part name="binid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:TWmsBins" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoByCodeHttpGetIn">
+    <wsdl:part name="bincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoByCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:TWmsBins" />
+  </wsdl:message>
+  <wsdl:message name="BinListHttpGetIn">
+    <wsdl:part name="branchid" type="s:string" />
+    <wsdl:part name="bintype" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BinListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTWmsBins" />
+  </wsdl:message>
+  <wsdl:message name="testNewWmsTransTaskHttpGetIn" />
+  <wsdl:message name="testNewWmsTransTaskHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListHttpGetIn">
+    <wsdl:part name="compid" type="s:string" />
+    <wsdl:part name="branchid" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="wmstranstypeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTwmsTrans" />
+  </wsdl:message>
+  <wsdl:message name="TransTypeInfoHttpGetIn">
+    <wsdl:part name="transtypeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransTypeInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:TWmsTransTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetTransTypeInfoFromWmsTransHttpGetIn">
+    <wsdl:part name="wmstransid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransTypeInfoFromWmsTransHttpGetOut">
+    <wsdl:part name="Body" element="tns:TWmsTransTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransListHttpGetIn">
+    <wsdl:part name="wmstransid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTWmsBinStoretrans" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransRecordHttpGetIn">
+    <wsdl:part name="storetransid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransRecordHttpGetOut">
+    <wsdl:part name="Body" element="tns:TWmsBinStoretrans" />
+  </wsdl:message>
+  <wsdl:message name="GetBinItemQtyRecordHttpGetIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBinItemQtyRecordHttpGetOut">
+    <wsdl:part name="Body" element="tns:TWmsBinItemsQty" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailHttpGetIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailHttpGetOut">
+    <wsdl:part name="Body" element="tns:TOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWmsTranListHttpGetIn">
+    <wsdl:part name="wmstranid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWmsTranListHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListCountHttpGetIn">
+    <wsdl:part name="wmstranid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListCountHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByCodeHttpGetIn">
+    <wsdl:part name="itemcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:TItems" />
+  </wsdl:message>
+  <wsdl:message name="SqlerrorlogHttpGetIn" />
+  <wsdl:message name="SqlerrorlogHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="CheckDBConnectionHttpPostIn" />
+  <wsdl:message name="CheckDBConnectionHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="BinitemsQtyHttpPostIn">
+    <wsdl:part name="criteria" type="s:string" />
+    <wsdl:part name="sortcriteria" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BinitemsQtyHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTWmsBinItemsQty" />
+  </wsdl:message>
+  <wsdl:message name="BinIDByCodeHttpPostIn">
+    <wsdl:part name="branchid" type="s:string" />
+    <wsdl:part name="bincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BinIDByCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailStatusHttpPostIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailItemHttpPostIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+    <wsdl:part name="newitemid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrderDetailItemHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReceiveHttpPostIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+    <wsdl:part name="transtype" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteReceiveHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoHttpPostIn">
+    <wsdl:part name="binid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:TWmsBins" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoByCodeHttpPostIn">
+    <wsdl:part name="bincode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBinInfoByCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:TWmsBins" />
+  </wsdl:message>
+  <wsdl:message name="BinListHttpPostIn">
+    <wsdl:part name="branchid" type="s:string" />
+    <wsdl:part name="bintype" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="BinListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTWmsBins" />
+  </wsdl:message>
+  <wsdl:message name="testNewWmsTransTaskHttpPostIn" />
+  <wsdl:message name="testNewWmsTransTaskHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListHttpPostIn">
+    <wsdl:part name="compid" type="s:string" />
+    <wsdl:part name="branchid" type="s:string" />
+    <wsdl:part name="status" type="s:string" />
+    <wsdl:part name="wmstranstypeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTwmsTrans" />
+  </wsdl:message>
+  <wsdl:message name="TransTypeInfoHttpPostIn">
+    <wsdl:part name="transtypeid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TransTypeInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:TWmsTransTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetTransTypeInfoFromWmsTransHttpPostIn">
+    <wsdl:part name="wmstransid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransTypeInfoFromWmsTransHttpPostOut">
+    <wsdl:part name="Body" element="tns:TWmsTransTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransListHttpPostIn">
+    <wsdl:part name="wmstransid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfTWmsBinStoretrans" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransRecordHttpPostIn">
+    <wsdl:part name="storetransid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStoreTransRecordHttpPostOut">
+    <wsdl:part name="Body" element="tns:TWmsBinStoretrans" />
+  </wsdl:message>
+  <wsdl:message name="GetBinItemQtyRecordHttpPostIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBinItemQtyRecordHttpPostOut">
+    <wsdl:part name="Body" element="tns:TWmsBinItemsQty" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailHttpPostIn">
+    <wsdl:part name="orderdtlid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderDetailHttpPostOut">
+    <wsdl:part name="Body" element="tns:TOrderDetails" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWmsTranListHttpPostIn">
+    <wsdl:part name="wmstranid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteWmsTranListHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListCountHttpPostIn">
+    <wsdl:part name="wmstranid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransListCountHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByCodeHttpPostIn">
+    <wsdl:part name="itemcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetItemByCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:TItems" />
+  </wsdl:message>
+  <wsdl:message name="SqlerrorlogHttpPostIn" />
+  <wsdl:message name="SqlerrorlogHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="CheckDBConnection">
+      <wsdl:input message="tns:CheckDBConnectionSoapIn" />
+      <wsdl:output message="tns:CheckDBConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQty">
+      <wsdl:input message="tns:BinitemsQtySoapIn" />
+      <wsdl:output message="tns:BinitemsQtySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQtyUpdate">
+      <wsdl:input message="tns:BinitemsQtyUpdateSoapIn" />
+      <wsdl:output message="tns:BinitemsQtyUpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBinTrans">
+      <wsdl:input message="tns:InsertBinTransSoapIn" />
+      <wsdl:output message="tns:InsertBinTransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinIDByCode">
+      <wsdl:input message="tns:BinIDByCodeSoapIn" />
+      <wsdl:output message="tns:BinIDByCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailStatus">
+      <wsdl:input message="tns:UpdateOrderDetailStatusSoapIn" />
+      <wsdl:output message="tns:UpdateOrderDetailStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailItem">
+      <wsdl:input message="tns:UpdateOrderDetailItemSoapIn" />
+      <wsdl:output message="tns:UpdateOrderDetailItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceive">
+      <wsdl:input message="tns:DeleteReceiveSoapIn" />
+      <wsdl:output message="tns:DeleteReceiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfo">
+      <wsdl:input message="tns:GetBinInfoSoapIn" />
+      <wsdl:output message="tns:GetBinInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfoByCode">
+      <wsdl:input message="tns:GetBinInfoByCodeSoapIn" />
+      <wsdl:output message="tns:GetBinInfoByCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinList">
+      <wsdl:input message="tns:BinListSoapIn" />
+      <wsdl:output message="tns:BinListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewWmsTransTask">
+      <wsdl:input message="tns:NewWmsTransTaskSoapIn" />
+      <wsdl:output message="tns:NewWmsTransTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testNewWmsTransTask">
+      <wsdl:input message="tns:testNewWmsTransTaskSoapIn" />
+      <wsdl:output message="tns:testNewWmsTransTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransList">
+      <wsdl:input message="tns:GetTransListSoapIn" />
+      <wsdl:output message="tns:GetTransListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveInternal">
+      <wsdl:input message="tns:MoveInternalSoapIn" />
+      <wsdl:output message="tns:MoveInternalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransTypeInfo">
+      <wsdl:input message="tns:TransTypeInfoSoapIn" />
+      <wsdl:output message="tns:TransTypeInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransTypeInfoFromWmsTrans">
+      <wsdl:input message="tns:GetTransTypeInfoFromWmsTransSoapIn" />
+      <wsdl:output message="tns:GetTransTypeInfoFromWmsTransSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransList">
+      <wsdl:input message="tns:GetStoreTransListSoapIn" />
+      <wsdl:output message="tns:GetStoreTransListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransRecord">
+      <wsdl:input message="tns:GetStoreTransRecordSoapIn" />
+      <wsdl:output message="tns:GetStoreTransRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinItemQtyRecord">
+      <wsdl:input message="tns:GetBinItemQtyRecordSoapIn" />
+      <wsdl:output message="tns:GetBinItemQtyRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <wsdl:input message="tns:GetOrderDetailSoapIn" />
+      <wsdl:output message="tns:GetOrderDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWmsTranList">
+      <wsdl:input message="tns:DeleteWmsTranListSoapIn" />
+      <wsdl:output message="tns:DeleteWmsTranListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransListCount">
+      <wsdl:input message="tns:GetTransListCountSoapIn" />
+      <wsdl:output message="tns:GetTransListCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByCode">
+      <wsdl:input message="tns:GetItemByCodeSoapIn" />
+      <wsdl:output message="tns:GetItemByCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sqlerrorlog">
+      <wsdl:input message="tns:SqlerrorlogSoapIn" />
+      <wsdl:output message="tns:SqlerrorlogSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpGet">
+    <wsdl:operation name="CheckDBConnection">
+      <wsdl:input message="tns:CheckDBConnectionHttpGetIn" />
+      <wsdl:output message="tns:CheckDBConnectionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQty">
+      <wsdl:input message="tns:BinitemsQtyHttpGetIn" />
+      <wsdl:output message="tns:BinitemsQtyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinIDByCode">
+      <wsdl:input message="tns:BinIDByCodeHttpGetIn" />
+      <wsdl:output message="tns:BinIDByCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailStatus">
+      <wsdl:input message="tns:UpdateOrderDetailStatusHttpGetIn" />
+      <wsdl:output message="tns:UpdateOrderDetailStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailItem">
+      <wsdl:input message="tns:UpdateOrderDetailItemHttpGetIn" />
+      <wsdl:output message="tns:UpdateOrderDetailItemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceive">
+      <wsdl:input message="tns:DeleteReceiveHttpGetIn" />
+      <wsdl:output message="tns:DeleteReceiveHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfo">
+      <wsdl:input message="tns:GetBinInfoHttpGetIn" />
+      <wsdl:output message="tns:GetBinInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfoByCode">
+      <wsdl:input message="tns:GetBinInfoByCodeHttpGetIn" />
+      <wsdl:output message="tns:GetBinInfoByCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinList">
+      <wsdl:input message="tns:BinListHttpGetIn" />
+      <wsdl:output message="tns:BinListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testNewWmsTransTask">
+      <wsdl:input message="tns:testNewWmsTransTaskHttpGetIn" />
+      <wsdl:output message="tns:testNewWmsTransTaskHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransList">
+      <wsdl:input message="tns:GetTransListHttpGetIn" />
+      <wsdl:output message="tns:GetTransListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransTypeInfo">
+      <wsdl:input message="tns:TransTypeInfoHttpGetIn" />
+      <wsdl:output message="tns:TransTypeInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransTypeInfoFromWmsTrans">
+      <wsdl:input message="tns:GetTransTypeInfoFromWmsTransHttpGetIn" />
+      <wsdl:output message="tns:GetTransTypeInfoFromWmsTransHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransList">
+      <wsdl:input message="tns:GetStoreTransListHttpGetIn" />
+      <wsdl:output message="tns:GetStoreTransListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransRecord">
+      <wsdl:input message="tns:GetStoreTransRecordHttpGetIn" />
+      <wsdl:output message="tns:GetStoreTransRecordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinItemQtyRecord">
+      <wsdl:input message="tns:GetBinItemQtyRecordHttpGetIn" />
+      <wsdl:output message="tns:GetBinItemQtyRecordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <wsdl:input message="tns:GetOrderDetailHttpGetIn" />
+      <wsdl:output message="tns:GetOrderDetailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWmsTranList">
+      <wsdl:input message="tns:DeleteWmsTranListHttpGetIn" />
+      <wsdl:output message="tns:DeleteWmsTranListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransListCount">
+      <wsdl:input message="tns:GetTransListCountHttpGetIn" />
+      <wsdl:output message="tns:GetTransListCountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByCode">
+      <wsdl:input message="tns:GetItemByCodeHttpGetIn" />
+      <wsdl:output message="tns:GetItemByCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sqlerrorlog">
+      <wsdl:input message="tns:SqlerrorlogHttpGetIn" />
+      <wsdl:output message="tns:SqlerrorlogHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpPost">
+    <wsdl:operation name="CheckDBConnection">
+      <wsdl:input message="tns:CheckDBConnectionHttpPostIn" />
+      <wsdl:output message="tns:CheckDBConnectionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQty">
+      <wsdl:input message="tns:BinitemsQtyHttpPostIn" />
+      <wsdl:output message="tns:BinitemsQtyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinIDByCode">
+      <wsdl:input message="tns:BinIDByCodeHttpPostIn" />
+      <wsdl:output message="tns:BinIDByCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailStatus">
+      <wsdl:input message="tns:UpdateOrderDetailStatusHttpPostIn" />
+      <wsdl:output message="tns:UpdateOrderDetailStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailItem">
+      <wsdl:input message="tns:UpdateOrderDetailItemHttpPostIn" />
+      <wsdl:output message="tns:UpdateOrderDetailItemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceive">
+      <wsdl:input message="tns:DeleteReceiveHttpPostIn" />
+      <wsdl:output message="tns:DeleteReceiveHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfo">
+      <wsdl:input message="tns:GetBinInfoHttpPostIn" />
+      <wsdl:output message="tns:GetBinInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfoByCode">
+      <wsdl:input message="tns:GetBinInfoByCodeHttpPostIn" />
+      <wsdl:output message="tns:GetBinInfoByCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BinList">
+      <wsdl:input message="tns:BinListHttpPostIn" />
+      <wsdl:output message="tns:BinListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="testNewWmsTransTask">
+      <wsdl:input message="tns:testNewWmsTransTaskHttpPostIn" />
+      <wsdl:output message="tns:testNewWmsTransTaskHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransList">
+      <wsdl:input message="tns:GetTransListHttpPostIn" />
+      <wsdl:output message="tns:GetTransListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransTypeInfo">
+      <wsdl:input message="tns:TransTypeInfoHttpPostIn" />
+      <wsdl:output message="tns:TransTypeInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransTypeInfoFromWmsTrans">
+      <wsdl:input message="tns:GetTransTypeInfoFromWmsTransHttpPostIn" />
+      <wsdl:output message="tns:GetTransTypeInfoFromWmsTransHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransList">
+      <wsdl:input message="tns:GetStoreTransListHttpPostIn" />
+      <wsdl:output message="tns:GetStoreTransListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransRecord">
+      <wsdl:input message="tns:GetStoreTransRecordHttpPostIn" />
+      <wsdl:output message="tns:GetStoreTransRecordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinItemQtyRecord">
+      <wsdl:input message="tns:GetBinItemQtyRecordHttpPostIn" />
+      <wsdl:output message="tns:GetBinItemQtyRecordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <wsdl:input message="tns:GetOrderDetailHttpPostIn" />
+      <wsdl:output message="tns:GetOrderDetailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWmsTranList">
+      <wsdl:input message="tns:DeleteWmsTranListHttpPostIn" />
+      <wsdl:output message="tns:DeleteWmsTranListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransListCount">
+      <wsdl:input message="tns:GetTransListCountHttpPostIn" />
+      <wsdl:output message="tns:GetTransListCountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByCode">
+      <wsdl:input message="tns:GetItemByCodeHttpPostIn" />
+      <wsdl:output message="tns:GetItemByCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Sqlerrorlog">
+      <wsdl:input message="tns:SqlerrorlogHttpPostIn" />
+      <wsdl:output message="tns:SqlerrorlogHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckDBConnection">
+      <soap:operation soapAction="http://tempuri.org/CheckDBConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQty">
+      <soap:operation soapAction="http://tempuri.org/BinitemsQty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQtyUpdate">
+      <soap:operation soapAction="http://tempuri.org/BinitemsQtyUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBinTrans">
+      <soap:operation soapAction="http://tempuri.org/InsertBinTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinIDByCode">
+      <soap:operation soapAction="http://tempuri.org/BinIDByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrderDetailStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailItem">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrderDetailItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceive">
+      <soap:operation soapAction="http://tempuri.org/DeleteReceive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfo">
+      <soap:operation soapAction="http://tempuri.org/GetBinInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfoByCode">
+      <soap:operation soapAction="http://tempuri.org/GetBinInfoByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinList">
+      <soap:operation soapAction="http://tempuri.org/BinList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewWmsTransTask">
+      <soap:operation soapAction="http://tempuri.org/NewWmsTransTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testNewWmsTransTask">
+      <soap:operation soapAction="http://tempuri.org/testNewWmsTransTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransList">
+      <soap:operation soapAction="http://tempuri.org/GetTransList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveInternal">
+      <soap:operation soapAction="http://tempuri.org/MoveInternal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransTypeInfo">
+      <soap:operation soapAction="http://tempuri.org/TransTypeInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransTypeInfoFromWmsTrans">
+      <soap:operation soapAction="http://tempuri.org/GetTransTypeInfoFromWmsTrans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransList">
+      <soap:operation soapAction="http://tempuri.org/GetStoreTransList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransRecord">
+      <soap:operation soapAction="http://tempuri.org/GetStoreTransRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinItemQtyRecord">
+      <soap:operation soapAction="http://tempuri.org/GetBinItemQtyRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <soap:operation soapAction="http://tempuri.org/GetOrderDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWmsTranList">
+      <soap:operation soapAction="http://tempuri.org/DeleteWmsTranList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransListCount">
+      <soap:operation soapAction="http://tempuri.org/GetTransListCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByCode">
+      <soap:operation soapAction="http://tempuri.org/GetItemByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sqlerrorlog">
+      <soap:operation soapAction="http://tempuri.org/Sqlerrorlog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckDBConnection">
+      <soap12:operation soapAction="http://tempuri.org/CheckDBConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQty">
+      <soap12:operation soapAction="http://tempuri.org/BinitemsQty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQtyUpdate">
+      <soap12:operation soapAction="http://tempuri.org/BinitemsQtyUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBinTrans">
+      <soap12:operation soapAction="http://tempuri.org/InsertBinTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinIDByCode">
+      <soap12:operation soapAction="http://tempuri.org/BinIDByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOrderDetailStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailItem">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOrderDetailItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceive">
+      <soap12:operation soapAction="http://tempuri.org/DeleteReceive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetBinInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfoByCode">
+      <soap12:operation soapAction="http://tempuri.org/GetBinInfoByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinList">
+      <soap12:operation soapAction="http://tempuri.org/BinList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewWmsTransTask">
+      <soap12:operation soapAction="http://tempuri.org/NewWmsTransTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testNewWmsTransTask">
+      <soap12:operation soapAction="http://tempuri.org/testNewWmsTransTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransList">
+      <soap12:operation soapAction="http://tempuri.org/GetTransList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveInternal">
+      <soap12:operation soapAction="http://tempuri.org/MoveInternal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransTypeInfo">
+      <soap12:operation soapAction="http://tempuri.org/TransTypeInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransTypeInfoFromWmsTrans">
+      <soap12:operation soapAction="http://tempuri.org/GetTransTypeInfoFromWmsTrans" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransList">
+      <soap12:operation soapAction="http://tempuri.org/GetStoreTransList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransRecord">
+      <soap12:operation soapAction="http://tempuri.org/GetStoreTransRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinItemQtyRecord">
+      <soap12:operation soapAction="http://tempuri.org/GetBinItemQtyRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWmsTranList">
+      <soap12:operation soapAction="http://tempuri.org/DeleteWmsTranList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransListCount">
+      <soap12:operation soapAction="http://tempuri.org/GetTransListCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByCode">
+      <soap12:operation soapAction="http://tempuri.org/GetItemByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sqlerrorlog">
+      <soap12:operation soapAction="http://tempuri.org/Sqlerrorlog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpGet" type="tns:WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="CheckDBConnection">
+      <http:operation location="/CheckDBConnection" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQty">
+      <http:operation location="/BinitemsQty" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinIDByCode">
+      <http:operation location="/BinIDByCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailStatus">
+      <http:operation location="/UpdateOrderDetailStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailItem">
+      <http:operation location="/UpdateOrderDetailItem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceive">
+      <http:operation location="/DeleteReceive" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfo">
+      <http:operation location="/GetBinInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfoByCode">
+      <http:operation location="/GetBinInfoByCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinList">
+      <http:operation location="/BinList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testNewWmsTransTask">
+      <http:operation location="/testNewWmsTransTask" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransList">
+      <http:operation location="/GetTransList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransTypeInfo">
+      <http:operation location="/TransTypeInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransTypeInfoFromWmsTrans">
+      <http:operation location="/GetTransTypeInfoFromWmsTrans" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransList">
+      <http:operation location="/GetStoreTransList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransRecord">
+      <http:operation location="/GetStoreTransRecord" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinItemQtyRecord">
+      <http:operation location="/GetBinItemQtyRecord" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <http:operation location="/GetOrderDetail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWmsTranList">
+      <http:operation location="/DeleteWmsTranList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransListCount">
+      <http:operation location="/GetTransListCount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByCode">
+      <http:operation location="/GetItemByCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sqlerrorlog">
+      <http:operation location="/Sqlerrorlog" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpPost" type="tns:WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="CheckDBConnection">
+      <http:operation location="/CheckDBConnection" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinitemsQty">
+      <http:operation location="/BinitemsQty" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinIDByCode">
+      <http:operation location="/BinIDByCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailStatus">
+      <http:operation location="/UpdateOrderDetailStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderDetailItem">
+      <http:operation location="/UpdateOrderDetailItem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteReceive">
+      <http:operation location="/DeleteReceive" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfo">
+      <http:operation location="/GetBinInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinInfoByCode">
+      <http:operation location="/GetBinInfoByCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BinList">
+      <http:operation location="/BinList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testNewWmsTransTask">
+      <http:operation location="/testNewWmsTransTask" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransList">
+      <http:operation location="/GetTransList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransTypeInfo">
+      <http:operation location="/TransTypeInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransTypeInfoFromWmsTrans">
+      <http:operation location="/GetTransTypeInfoFromWmsTrans" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransList">
+      <http:operation location="/GetStoreTransList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoreTransRecord">
+      <http:operation location="/GetStoreTransRecord" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinItemQtyRecord">
+      <http:operation location="/GetBinItemQtyRecord" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderDetail">
+      <http:operation location="/GetOrderDetail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWmsTranList">
+      <http:operation location="/DeleteWmsTranList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransListCount">
+      <http:operation location="/GetTransListCount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByCode">
+      <http:operation location="/GetItemByCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Sqlerrorlog">
+      <http:operation location="/Sqlerrorlog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://192.168.80.10/CARPETCLEANINGWEBSERVICE/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+      <soap12:address location="http://192.168.80.10/CARPETCLEANINGWEBSERVICE/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpGet" binding="tns:WebServiceHttpGet">
+      <http:address location="http://192.168.80.10/CARPETCLEANINGWEBSERVICE/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpPost" binding="tns:WebServiceHttpPost">
+      <http:address location="http://192.168.80.10/CARPETCLEANINGWEBSERVICE/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

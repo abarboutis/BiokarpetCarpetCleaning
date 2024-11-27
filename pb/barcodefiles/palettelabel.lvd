@@ -1,0 +1,76 @@
+Create-A-Label Tools: Label Variable Definitions File
+
+File Name                     D:\@Ody\Projects\EXALCOI\PB\src\barcodefiles\palettelabel.lbl
+Printer:                      HP LaserJet 4100 Series PCL on Ne03:
+
+Field Name:                   "TEXT2"
+Data Source:                  When printed
+Prompt:                       "PPACKNO"
+String Length:                15
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text
+
+Field Name:                   "TEXT9"
+Data Source:                  When printed
+Prompt:                       "PITEMCODE"
+String Length:                15
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text
+
+Field Name:                   "TEXT10"
+Data Source:                  When printed
+Prompt:                       "PITEMDESC"
+String Length:                30
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text
+
+Field Name:                   "TEXT11"
+Data Source:                  When printed
+Prompt:                       "PITEMLENGTH"
+String Length:                8
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text
+
+Field Name:                   "TEXT12"
+Data Source:                  When printed
+Prompt:                       "PPRODDATE"
+String Length:                10
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text
+
+Field Name:                   "TEXT13"
+Data Source:                  When printed
+Prompt:                       "PITEMBARS"
+String Length:                12
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text
+
+Field Name:                   "TEXT14"
+Data Source:                  When printed
+Prompt:                       "PITEMWEIGHT"
+String Length:                12
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text
+
+Field Name:                   "TEXT15"
+Data Source:                  When printed
+Prompt:                       "PBINCODE"
+String Length:                12
+Required:                     No
+Must Fill:                    No
+Field Type:                   Text
+
+Field Name:                   "PBARCODE"
+Data Source:                  When printed
+Prompt:                       "PBARCODE"
+String Length:                15
+Required:                     No
+Must Fill:                    No
+Field Type:                   Bar code (Code 128 (Auto-Switching))

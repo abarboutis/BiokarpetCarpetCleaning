@@ -1,0 +1,15 @@
+D:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\bin\CarpetCleaningWebService.dll
+D:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\bin\CarpetCleaningWebService.pdb
+D:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\obj\Debug\ResolveAssemblyReference.cache
+D:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\obj\Debug\CarpetCleaningWebService.dll
+D:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\obj\Debug\CarpetCleaningWebService.pdb
+E:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\bin\CarpetCleaningWebService.dll
+E:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\bin\CarpetCleaningWebService.pdb
+E:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\obj\Debug\ResolveAssemblyReference.cache
+E:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\obj\Debug\CarpetCleaningWebService.dll
+E:\!WORK\Projects\Biokarpet\CarpetCleaning\CarpetCleaningWebService\obj\Debug\CarpetCleaningWebService.pdb
+\\10.1.10.29\CarpetCleaning\CarpetCleaningWebService\bin\CarpetCleaningWebService.dll
+\\10.1.10.29\CarpetCleaning\CarpetCleaningWebService\bin\CarpetCleaningWebService.pdb
+\\10.1.10.29\CarpetCleaning\CarpetCleaningWebService\obj\Debug\ResolveAssemblyReference.cache
+\\10.1.10.29\CarpetCleaning\CarpetCleaningWebService\obj\Debug\CarpetCleaningWebService.dll
+\\10.1.10.29\CarpetCleaning\CarpetCleaningWebService\obj\Debug\CarpetCleaningWebService.pdb

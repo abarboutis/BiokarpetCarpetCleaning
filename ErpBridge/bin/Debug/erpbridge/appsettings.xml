@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<appSettings>
+  <setting>
+    <name>importtable</name>
+    <value>EXALCOSTORES</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>ERPBRANCHID</name>
+    <value>16</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>LOCALSERVICEURL</name>
+    <value>http://10.1.10.21/WMSSyncService/wmssyncservice.asmx</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+
+  <setting>
+    <name>SQLCONSTRING</name>
+    <value>Data Source=192.168.16.50\ARTEMIDOS;Initial Catalog=CarpetCleaning;User ID=sa;Password=bidata</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+   
+  <setting>
+    <name>ATLANTISUSER</name>
+    <value>ALPISUSER</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>ATLANTISPASS</name>
+    <value>bidata</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+  <setting>
+    <name>SERVICEURL</name>
+    <value>http://10.1.10.160:4564/scripts/RWS.exe/soap/IAtlantis</value>
+    <type>string</type>
+    <encrypted>False</encrypted>
+    <toencrypt>False</toencrypt>
+  </setting>
+</appSettings>

@@ -1,0 +1,9 @@
+
+
+	Share Printer with a name "TLP2844"
+
+
+	Net Use LPT1: \\ODYXP\TLP2844  /PERSISTENT:YES
+
+
+	

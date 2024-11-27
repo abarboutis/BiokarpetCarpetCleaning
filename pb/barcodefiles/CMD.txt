@@ -1,0 +1,1 @@
+copy exalco.txt+EXALC30.PCX PRN /b
