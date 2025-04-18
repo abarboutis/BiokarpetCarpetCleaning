@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ERPBridge_WebService_WMSSyncService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost/WMSSyncServ/WMSSyncService.asmx</Value>
+      <Value Profile="(Default)">http://10.1.10.46/WMSSyncService/WMSSyncService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

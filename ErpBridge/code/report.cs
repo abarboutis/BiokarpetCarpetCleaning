@@ -204,7 +204,7 @@ namespace ReportGenerator
         long prodorderid = 0;
         int ReportType = 0;
         sqlstr.Append("SELECT TRANSID,ERPCompID, ERPBRACHID ,AlpisStoreTransID,WMSTRANSID, (CAST(DAY(AlpisStoreTransDate) as VARCHAR)+'/'+CAST(month(AlpisStoreTransDate) as VARCHAR)+'/'+CAST(year(AlpisStoreTransDate) as VARCHAR)) as  AlpisStoreTransDate, ");
-        sqlstr.Append("ERPTransSeriesID, ERPCustomerID,ERPSupplierID,ERPFromStoreID, ");
+        sqlstr.Append(" (CAST(DAY(DispatchDate) as VARCHAR)+'/'+CAST(month(DispatchDate) as VARCHAR)+'/'+CAST(year(DispatchDate) as VARCHAR)) as  DispatchDate,ERPTransSeriesID, ERPCustomerID,ERPSupplierID,ERPFromStoreID, ");
         sqlstr.Append("ERPToStoreID, ERPItemID, ERPItemMUnit,ERPITEMSMUNIT,");
         sqlstr.Append("ERPItemQty,ERPITEMSQTY,ERPItemUnitPrice, ERPItemQtyPrice,EXTRASERVICE,ERPTRANSCODE,DOCTYPE,isnew from ZCLEANINGCARPETSTRANS");
 
@@ -223,6 +223,7 @@ namespace ReportGenerator
                 if (!(dt.Rows[i]["DOCTYPE"] == DBNull.Value)) TransList[i].DOCTYPE = long.Parse(dt.Rows[i]["DOCTYPE"].ToString());
                 if (!(dt.Rows[i]["AlpisStoreTransID"] == DBNull.Value)) TransList[i].AlpisStoreTransID = long.Parse(dt.Rows[i]["AlpisStoreTransID"].ToString());
                 if (!(dt.Rows[i]["AlpisStoreTransDate"] == DBNull.Value)) TransList[i].AlpisStoreTransDate = dt.Rows[i]["ALPISSTORETRANSDATE"].ToString();
+                if (!(dt.Rows[i]["DispatchDate"] == DBNull.Value)) TransList[i].DispatchDate = dt.Rows[i]["DispatchDate"].ToString();
                 if (!(dt.Rows[i]["ERPITEMSQTY"] == DBNull.Value)) TransList[i].ERPITEMSQTY = decimal.Parse(dt.Rows[i]["ERPITEMSQTY"].ToString());
                 if (!(dt.Rows[i]["ERPItemQtyPrice"] == DBNull.Value)) TransList[i].ERPItemQtyPrice = decimal.Parse(dt.Rows[i]["ERPItemQtyPrice"].ToString());
                 if (!(dt.Rows[i]["ERPItemUnitPrice"] == DBNull.Value)) TransList[i].ERPItemUnitPrice = decimal.Parse(dt.Rows[i]["ERPItemUnitPrice"].ToString());
@@ -240,15 +241,7 @@ namespace ReportGenerator
                 if (!(dt.Rows[i]["ERPItemID"] == DBNull.Value)) TransList[i].ERPItemID = long.Parse(dt.Rows[i]["ERPItemID"].ToString());
                 if (!(dt.Rows[i]["ERPFromStoreID"] == DBNull.Value)) TransList[i].ERPFromStoreID = long.Parse(dt.Rows[i]["ERPFromStoreID"].ToString());
                  if (!(dt.Rows[i]["ERPCustomerID"] == DBNull.Value)) TransList[i].ERPCustomerID = long.Parse(dt.Rows[i]["ERPCustomerID"].ToString());
-            
-       
         }
-
-
-
-
-
-
 
         GlobVariables.webServiceProvider.CarpetCleaningTrans(TransList);
 

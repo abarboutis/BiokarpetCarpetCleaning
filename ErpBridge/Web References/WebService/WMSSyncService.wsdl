@@ -2,6 +2,12 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://WMSSyncService.intranet.albio.gr/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://WMSSyncService.intranet.albio.gr/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://WMSSyncService.intranet.albio.gr/">
+      <s:element name="SOA_TestLogFile">
+        <s:complexType />
+      </s:element>
+      <s:element name="SOA_TestLogFileResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="SOA_WebServiceVersion">
         <s:complexType />
       </s:element>
@@ -312,6 +318,12 @@
           <s:element minOccurs="1" maxOccurs="1" name="ItemPrimaryQty" type="s:decimal" />
           <s:element minOccurs="1" maxOccurs="1" name="ItemSecondaryQty" type="s:decimal" />
           <s:element minOccurs="0" maxOccurs="1" name="EntryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemDesc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MunitPrimary" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MunitSecondary" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MunitDesc1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MunitDesc2" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="TestERPcon">
@@ -549,6 +561,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SOA_GetLotbyCodeInventory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lotcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SOA_GetLotbyCodeInventoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SOA_GetLotbyCodeInventoryResult" type="tns:SyncLot" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SOA_GetInventoryLots">
         <s:complexType>
           <s:sequence>
@@ -663,6 +689,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="AlpisStoreTransID" type="s:long" />
           <s:element minOccurs="1" maxOccurs="1" name="WMSTRANSID" type="s:long" />
           <s:element minOccurs="0" maxOccurs="1" name="AlpisStoreTransDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DispatchDate" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="ERPTransSeriesID" type="s:long" />
           <s:element minOccurs="1" maxOccurs="1" name="ERPCustomerID" type="s:long" />
           <s:element minOccurs="1" maxOccurs="1" name="ERPSupplierID" type="s:long" />
@@ -733,6 +760,12 @@
       </s:element>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="SOA_TestLogFileSoapIn">
+    <wsdl:part name="parameters" element="tns:SOA_TestLogFile" />
+  </wsdl:message>
+  <wsdl:message name="SOA_TestLogFileSoapOut">
+    <wsdl:part name="parameters" element="tns:SOA_TestLogFileResponse" />
+  </wsdl:message>
   <wsdl:message name="SOA_WebServiceVersionSoapIn">
     <wsdl:part name="parameters" element="tns:SOA_WebServiceVersion" />
   </wsdl:message>
@@ -877,6 +910,12 @@
   <wsdl:message name="SOA_GetNewLotbyCodeSoapOut">
     <wsdl:part name="parameters" element="tns:SOA_GetNewLotbyCodeResponse" />
   </wsdl:message>
+  <wsdl:message name="SOA_GetLotbyCodeInventorySoapIn">
+    <wsdl:part name="parameters" element="tns:SOA_GetLotbyCodeInventory" />
+  </wsdl:message>
+  <wsdl:message name="SOA_GetLotbyCodeInventorySoapOut">
+    <wsdl:part name="parameters" element="tns:SOA_GetLotbyCodeInventoryResponse" />
+  </wsdl:message>
   <wsdl:message name="SOA_GetInventoryLotsSoapIn">
     <wsdl:part name="parameters" element="tns:SOA_GetInventoryLots" />
   </wsdl:message>
@@ -932,6 +971,10 @@
     <wsdl:part name="parameters" element="tns:CarpetCleaningCancelTransResponse" />
   </wsdl:message>
   <wsdl:portType name="WMSSyncServiceSoap">
+    <wsdl:operation name="SOA_TestLogFile">
+      <wsdl:input message="tns:SOA_TestLogFileSoapIn" />
+      <wsdl:output message="tns:SOA_TestLogFileSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SOA_WebServiceVersion">
       <wsdl:input message="tns:SOA_WebServiceVersionSoapIn" />
       <wsdl:output message="tns:SOA_WebServiceVersionSoapOut" />
@@ -1028,6 +1071,10 @@
       <wsdl:input message="tns:SOA_GetNewLotbyCodeSoapIn" />
       <wsdl:output message="tns:SOA_GetNewLotbyCodeSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SOA_GetLotbyCodeInventory">
+      <wsdl:input message="tns:SOA_GetLotbyCodeInventorySoapIn" />
+      <wsdl:output message="tns:SOA_GetLotbyCodeInventorySoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SOA_GetInventoryLots">
       <wsdl:input message="tns:SOA_GetInventoryLotsSoapIn" />
       <wsdl:output message="tns:SOA_GetInventoryLotsSoapOut" />
@@ -1067,6 +1114,15 @@
   </wsdl:portType>
   <wsdl:binding name="WMSSyncServiceSoap" type="tns:WMSSyncServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SOA_TestLogFile">
+      <soap:operation soapAction="http://WMSSyncService.intranet.albio.gr/SOA_TestLogFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SOA_WebServiceVersion">
       <soap:operation soapAction="http://WMSSyncService.intranet.albio.gr/SOA_WebServiceVersion" style="document" />
       <wsdl:input>
@@ -1283,6 +1339,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SOA_GetLotbyCodeInventory">
+      <soap:operation soapAction="http://WMSSyncService.intranet.albio.gr/SOA_GetLotbyCodeInventory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SOA_GetInventoryLots">
       <soap:operation soapAction="http://WMSSyncService.intranet.albio.gr/SOA_GetInventoryLots" style="document" />
       <wsdl:input>
@@ -1367,6 +1432,15 @@
   </wsdl:binding>
   <wsdl:binding name="WMSSyncServiceSoap12" type="tns:WMSSyncServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SOA_TestLogFile">
+      <soap12:operation soapAction="http://WMSSyncService.intranet.albio.gr/SOA_TestLogFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SOA_WebServiceVersion">
       <soap12:operation soapAction="http://WMSSyncService.intranet.albio.gr/SOA_WebServiceVersion" style="document" />
       <wsdl:input>
@@ -1583,6 +1657,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SOA_GetLotbyCodeInventory">
+      <soap12:operation soapAction="http://WMSSyncService.intranet.albio.gr/SOA_GetLotbyCodeInventory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SOA_GetInventoryLots">
       <soap12:operation soapAction="http://WMSSyncService.intranet.albio.gr/SOA_GetInventoryLots" style="document" />
       <wsdl:input>
@@ -1667,10 +1750,10 @@
   </wsdl:binding>
   <wsdl:service name="WMSSyncService">
     <wsdl:port name="WMSSyncServiceSoap" binding="tns:WMSSyncServiceSoap">
-      <soap:address location="http://localhost/WMSSyncServ/WMSSyncService.asmx" />
+      <soap:address location="http://10.1.10.46/WMSSyncService/WMSSyncService.asmx" />
     </wsdl:port>
     <wsdl:port name="WMSSyncServiceSoap12" binding="tns:WMSSyncServiceSoap12">
-      <soap12:address location="http://localhost/WMSSyncServ/WMSSyncService.asmx" />
+      <soap12:address location="http://10.1.10.46/WMSSyncService/WMSSyncService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

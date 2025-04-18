@@ -201,10 +201,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost/WMSSyncServ/">
+    <WebReferenceUrl Include="http://10.1.10.46/WMSSyncService/">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WebService\</RelPath>
-      <UpdateFromURL>http://localhost/WMSSyncServ/</UpdateFromURL>
+      <UpdateFromURL>http://10.1.10.46/WMSSyncService/</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
